@@ -27,3 +27,15 @@ function clearLibrary() {
 }
 
 const library = document.querySelector(".library");
+const btn_addbook = document.querySelector("#addbook");
+
+btn_addbook.addEventListener("click", () => {
+  let authorname = prompt("enter author");
+  let bookname = prompt("enter book name");
+  let pageno = prompt("enter no of pages");
+
+  book = new Book(authorname, bookname, pageno);
+  addBookToLibrary(book);
+  clearLibrary();
+  displayLibrary();
+});
