@@ -22,4 +22,8 @@ function displayLibrary() {
   });
 }
 
+function clearLibrary() {
+  library.innerHTML = "";
+}
+
 const library = document.querySelector(".library");

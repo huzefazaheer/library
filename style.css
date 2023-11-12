@@ -1,0 +1,8 @@
+.library {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.library div {
+  border: black solid 1px;
+}
