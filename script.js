@@ -71,3 +71,7 @@ document.addEventListener("click", (e) => {
     toggleModal();
   }
 });
+
+gameOfThrones = new Book("George R. R. Martin", "A Game of Thrones", 694);
+addBookToLibrary(gameOfThrones);
+displayLibrary();
