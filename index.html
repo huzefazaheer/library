@@ -15,20 +15,20 @@
     <div class="modal">
       <div class="modal-content">
         <h2>Add Book</h2>
-        <form action="">
+        <form action="" onsubmit="return false">
           <div class="forminput">
             <label for="bookname">Book Name</label>
-            <input id="bookname" type="text" />
+            <input id="bookname" type="text" required minlength="3" />
           </div>
           <div class="forminput">
             <label for="bookauthor">Author</label>
-            <input id="bookauthor" type="text" />
+            <input id="bookauthor" type="text" required minlength="3" />
           </div>
           <div class="forminput">
             <label for="bookpages">Number of Pages</label>
-            <input id="bookpages" type="number" />
+            <input id="bookpages" type="number" required min="1" />
           </div>
-          <input id="btnsubmit" type="button" value="Add" />
+          <input id="btnsubmit" type="submit" value="Add" />
         </form>
       </div>
     </div>

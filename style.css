@@ -43,7 +43,7 @@ form {
   justify-content: space-between;
 }
 
-input[type="button"] {
+input[type="submit"] {
   padding: 1vh 8vw;
   background-color: whitesmoke;
   border: black solid 1px;

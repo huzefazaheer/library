@@ -29,12 +29,13 @@ function clearLibrary() {
 const library = document.querySelector(".library");
 const btn_addbook = document.querySelector("#addbook");
 const modal = document.querySelector(".modal");
-const btn_submit = document.querySelector("#btnsubmit");
 const form = document.querySelector("form");
+const booknameinput = document.querySelector("#bookname");
+const bookauthorinput = document.querySelector("#bookauthor");
+const bookpagesinput = document.querySelector("#bookpages");
 
+let isModalShown = false;
 function toggleModal() {
-  let isModalShown = false;
-
   if (!isModalShown) {
     modal.style.display = "block";
     isModalShown = true;
@@ -44,18 +45,25 @@ function toggleModal() {
   }
 }
 
-btn_addbook.addEventListener("click", () => {
-  toggleModal();
-});
+function clearForm() {
+  bookauthorinput.value = "";
+  booknameinput.value = "";
+  bookpagesinput.value = "";
+}
 
-btn_submit.addEventListener("click", () => {
-  let authorname = prompt("enter author");
-  let bookname = prompt("enter book name");
-  let pageno = prompt("enter no of pages");
+form.addEventListener("submit", () => {
+  let authorname = bookauthorinput.value;
+  let bookname = booknameinput.value;
+  let pageno = bookpagesinput.value;
   book = new Book(authorname, bookname, pageno);
   addBookToLibrary(book);
   clearLibrary();
   displayLibrary();
+  toggleModal();
+});
+
+btn_addbook.addEventListener("click", () => {
+  toggleModal();
 });
 
 document.addEventListener("click", (e) => {
