@@ -17,7 +17,15 @@ function addBookToLibrary(book) {
 function displayLibrary() {
   myLibrary.forEach((book) => {
     const bookHTML = document.createElement("div");
-    bookHTML.innerHTML = `${book.name} </br> ${book.author} </br> ${book.noOfPages}`;
+    const bookHeading = document.createElement("h2");
+    const bookAuthor = document.createElement("h3");
+    const bookPageCount = document.createElement("p");
+    bookHeading.innerText = book.name;
+    bookAuthor.innerText = book.author;
+    bookPageCount.innerText = `${book.noOfPages} pages`;
+    bookHTML.appendChild(bookHeading);
+    bookHTML.appendChild(bookAuthor);
+    bookHTML.appendChild(bookPageCount);
     library.appendChild(bookHTML);
   });
 }
